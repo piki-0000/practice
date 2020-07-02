@@ -1,10 +1,11 @@
 /* posts/index ================================ */
 
 .posts-index-item {
-    padding: 20px 30px;
-    background-color: white;
+    padding: 26px 50px;
+    background-color: #FCFDF7;
     overflow: hidden;
     box-shadow: 0 2px 6px #c1ced7;
+    color: #847971; 
 }
 
 .post-left img {
@@ -63,7 +64,7 @@ margin-left: 15px;
 }
 
 .posts-show-item p {
-font-size: 24px;
+font-size: 22px;
 margin: 20px 0;
 }
 
@@ -85,6 +86,18 @@ font-size: 14px;
 
 /* posts/new ================================ */
 
-
+.posts-new textarea {
+    font-size: 20px;
+    padding: 10px;
+    min-height: 140px;
+    border: 1px solid rgb(216, 218, 223);
+    resize: none;
+  }
+  
+  .posts-new textarea::-webkit-input-placeholder {
+    font-size: 24px;
+    opacity: 0.5;
+  }
+  
 
 
