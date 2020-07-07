@@ -11,13 +11,16 @@
   <body>
     <header>
       <div class="header-logo">
-        <%= link_to("PracticeApp", "/") %>
+        <% if @current_user %>
+          <%= link_to("PracticeApp", "/posts/index") %>
+        <% else %>
+          <%= link_to("PracticeApp", "/") %>
+        <% end %>
       </div>
       <ul class="header-menus">
-       <% current_user = User.find_by(id: session[:user_id]) %>
-      <% if current_user %>
+      <% if @current_user %>
           <li>
-            <%= link_to(current_user.name,"/users/#{current_user.id}") %>
+            <%= link_to(@current_user.name,"/users/#{@current_user.id}") %>
           </li>
           <li>
             <%= link_to("投稿一覧", "/posts/index") %>
