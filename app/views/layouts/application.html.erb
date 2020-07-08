@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PracticeApp</title>
+    <title>TweetApp</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
     <header>
       <div class="header-logo">
         <% if @current_user %>
-          <%= link_to("PracticeApp", "/posts/index") %>
+          <%= link_to("TweetApp", "/posts/index") %>
         <% else %>
-          <%= link_to("PracticeApp", "/") %>
+          <%= link_to("TweetApp", "/") %>
         <% end %>
       </div>
       <ul class="header-menus">
-      <% if @current_user %>
+        <% if @current_user %>
           <li>
-            <%= link_to(@current_user.name,"/users/#{@current_user.id}") %>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
           </li>
           <li>
             <%= link_to("投稿一覧", "/posts/index") %>
@@ -47,11 +49,13 @@
         <% end %>
       </ul>
     </header>
-    <% if flash[:notice]%>
+
+    <% if flash[:notice] %>
       <div class="flash">
-        <%= flash[:notice]%>
+        <%= flash[:notice] %>
       </div>
     <% end %>
+    
     <%= yield %>
   </body>
 </html>
