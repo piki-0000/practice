@@ -2,18 +2,29 @@
 <div class="row">
   <div class="col-md-9">
     <div class="block1_hash">
-       <%= image_tag("hashtag.png") %>
          <div class="block2_hash">
             <div class="name_hash">
                <%= @tag.hashname %>
             </div>
          <div class="edit_hash">
-            <%= render 'users/follow_form' %>
+            <%
+=begin%>
+ <%= render 'users/follow_form' %> 
+<%
+=end%>
          </div>
         <div class="fllw_hash">
-          <%= render 'shared/user_info_default' %>
+          <%
+=begin%>
+ <%= render 'shared/user_info_default' %> 
+<%
+=end%>
           <span style="margin-right:15px;"></span>
-          <%= render 'shared/stats_default' %>
+          <%
+=begin%>
+ <%= render 'shared/stats_default' %> 
+<%
+=end%>
         </div>
        </div>
      </div>
@@ -24,7 +35,11 @@
    <div class="posted_content">
      <div class="col-md-8">
        <div class="picture_hash">
-         <%= render @post %>
+         <%
+=begin%>
+ <%= render @post %> 
+<%
+=end%>
        </div><!-- .picture -->
      </div>
    </div>

@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+    belongs_to :user
     validates :content, {presence: true, length: {maximum: 140}}
     validates :user_id, {presence: true}
     has_and_belongs_to_many :hashtags
