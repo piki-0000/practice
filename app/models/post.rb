@@ -2,7 +2,9 @@ class Post < ApplicationRecord
     belongs_to :user
     validates :content, {presence: true, length: {maximum: 140}}
     validates :user_id, {presence: true}
-    has_and_belongs_to_many :hashtags
+    has_many :post_hashtags
+    has_many :hashtags, through: :post_hashtags
+    
     
     def user
       return User.find_by(id: self.user_id)
@@ -21,11 +23,11 @@ class Post < ApplicationRecord
 
   before_update do 
     post = post.find_by(id: self.id)
-    post.hashtags.clear
+    # post.hashtags.clear
     hashtags = self.content.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
     hashtags.uniq.map do |hashtag|
-      tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
-      post.hashtags << tag
+      hashtag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      post.hashtags << hashtag
     end
   end
 

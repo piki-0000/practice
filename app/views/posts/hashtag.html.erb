@@ -4,27 +4,16 @@
     <div class="block1_hash">
          <div class="block2_hash">
             <div class="name_hash">
-               <%= @tag.hashname %>
+               <%= @tag.posts.each do |post| %>　
+               
+                  <%= post %>
+                  
+                <% end %>　
             </div>
          <div class="edit_hash">
-            <%
-=begin%>
- <%= render 'users/follow_form' %> 
-<%
-=end%>
          </div>
         <div class="fllw_hash">
-          <%
-=begin%>
- <%= render 'shared/user_info_default' %> 
-<%
-=end%>
           <span style="margin-right:15px;"></span>
-          <%
-=begin%>
- <%= render 'shared/stats_default' %> 
-<%
-=end%>
         </div>
        </div>
      </div>
@@ -35,11 +24,6 @@
    <div class="posted_content">
      <div class="col-md-8">
        <div class="picture_hash">
-         <%
-=begin%>
- <%= render @post %> 
-<%
-=end%>
        </div><!-- .picture -->
      </div>
    </div>

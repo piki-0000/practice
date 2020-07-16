@@ -26,4 +26,8 @@ Rails.application.routes.draw do
   
   get "/" => "home#top"
   get "about" => "home#about"
+
+  resources :users do
+    get :search, on: :collection
+  end
 end

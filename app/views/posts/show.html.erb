@@ -8,6 +8,14 @@
       <p>
         <%= @post.content %>
       </p>
+      <p>
+        <%= @post.hashtags.each do |tag| %>　
+
+        <%= tag %>
+
+        <% end %>
+      
+      </p>
       <div class="post-time">
         <%= @post.created_at %>
       </div>
