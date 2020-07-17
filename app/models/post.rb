@@ -16,8 +16,8 @@ class Post < ApplicationRecord
     hashtags  = self.content.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
     hashtags.uniq.map do |hashtag|
       #ハッシュタグは先頭の'#'を外した上で保存
-      tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
-      post.hashtags << tag
+      hashtag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      post.hashtags << hashtag
     end
   end
 
